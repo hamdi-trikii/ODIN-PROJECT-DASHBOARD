@@ -1,0 +1,36 @@
+#header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 60px;
+    gap: 20px;
+    position:sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    box-shadow: 1px  0px 10px wheat;
+    #search-bar{
+        flex: 1;
+        margin-right: 80px;
+        height: 30px;
+        border-radius: 20px;
+        background-color: gainsboro;
+       
+    }
+    #profile-img{
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+
+    }
+    #profile-name{
+        text-transform: capitalize;
+        font-size: 1.5rem;
+
+    }
+
+}
+svg{
+    width: 2rem;
+    height: 2rem;
+}

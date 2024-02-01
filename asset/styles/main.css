@@ -1,0 +1,298 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+}
+body #aside {
+  grid-column: 1/2;
+  grid-row: 1/5;
+}
+body #nav, body #header, body #main, body #footer {
+  grid-column: 2/6;
+}
+
+#header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 60px;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
+  box-shadow: 1px 0px 10px wheat;
+}
+#header #search-bar {
+  flex: 1;
+  margin-right: 80px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: gainsboro;
+}
+#header #profile-img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+#header #profile-name {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+}
+
+svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+#nav {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto auto auto;
+  grid-auto-flow: column;
+  align-items: center;
+  padding: 20px 60px;
+}
+#nav #profile-img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+#nav #text-container {
+  font-size: 1.6rem;
+  margin-left: 1.5rem;
+}
+#nav #btns-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1vw;
+}
+#nav #btns-container .btn {
+  margin: 0 5px;
+  background-color: brown;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 30px;
+  color: white;
+  font-weight: 900;
+}
+#nav #btns-container .btn:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  background-color: rgb(200, 63, 63);
+  box-shadow: 0px 0px 8px black;
+  color: whitesmoke;
+}
+
+#aside {
+  background-color: orange;
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-auto-flow: row;
+  padding-left: 20px;
+  padding-top: 40px;
+}
+#aside svg {
+  fill: white;
+}
+#aside #dashboard-header {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 10px;
+}
+#aside #dashboard-header:hover {
+  cursor: pointer;
+  text-shadow: 0px 0px 4px white;
+}
+#aside #dashboard-header #dashboard-logo {
+  width: 2.8rem;
+  height: 2.8rem;
+}
+#aside #dashboard-header #text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+#aside .navigation-options {
+  margin-top: 8.5vh;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 2.8vh;
+}
+#aside .navigation-options .option {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 20px;
+}
+#aside .navigation-options .option .opt-name {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 600;
+}
+#aside .navigation-options .option:hover {
+  cursor: pointer;
+  text-shadow: 0px 0px 4px white;
+  transform: scale(1.06);
+}
+
+#main {
+  background-color: beige;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 1.2vw;
+  padding: 1.2vw 1.2vw;
+}
+#main #boxes-container {
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.2vw;
+}
+#main #boxes-container #title {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  grid-column: 1/-1;
+}
+#main #boxes-container .box {
+  background-color: white;
+  border-radius: 5px;
+  border-left: 5px solid orange;
+  padding: 15px 15px;
+  height: -moz-max-content;
+  height: max-content;
+  box-shadow: 0px 0px 8px 1px wheat;
+}
+#main #boxes-container .box .title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+#main #boxes-container .box .text {
+  opacity: 0.8;
+  margin-left: 5px;
+  line-height: 1.4rem;
+}
+#main #boxes-container .box .icons {
+  margin-top: 20px;
+  width: -moz-max-content;
+  width: max-content;
+  margin-right: 5px;
+  margin-left: auto;
+}
+#main #boxes-container .box .icons svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 5px;
+  cursor: pointer;
+}
+#main #boxes-container .box .icons svg:hover {
+  transform: rotate(20deg);
+}
+#main #aside-boxes-container {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#main #aside-boxes-container .container .title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+#main #aside-boxes-container .container .box {
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px 15px;
+  height: -moz-max-content;
+  height: max-content;
+  box-shadow: 0px 0px 8px 1px wheat;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2vh;
+}
+#main #aside-boxes-container .container .box hr {
+  width: 100%;
+  margin: 2.5vh 0;
+}
+#main #aside-boxes-container .container .box .box-title {
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  margin-bottom: 0.5vh;
+}
+#main #aside-boxes-container .container .box .text {
+  opacity: 0.8;
+}
+#main #aside-boxes-container .container .box .img-text-container {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: auto 1fr;
+  -moz-column-gap: 1vw;
+       column-gap: 1vw;
+  justify-items: self-start;
+  align-items: self-end;
+  margin: 1.3vh 0;
+}
+#main #aside-boxes-container .container .box .img-text-container .title {
+  font-size: 1.3rem;
+}
+#main #aside-boxes-container .container .box .img-text-container .img {
+  grid-row: 1/3;
+  grid-column: 1;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  justify-self: self-start;
+}/*# sourceMappingURL=main.css.map */
